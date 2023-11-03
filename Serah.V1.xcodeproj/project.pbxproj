@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10103A02AEA9F8A00D70471 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101039F2AEA9F8A00D70471 /* questions.swift */; };
 		C14133FE2ADF78940077E085 /* Serah_V1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14133FD2ADF78940077E085 /* Serah_V1App.swift */; };
 		C14134002ADF78940077E085 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14133FF2ADF78940077E085 /* ContentView.swift */; };
 		C14134022ADF78950077E085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14134012ADF78950077E085 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 		C141340F2ADF78950077E085 /* Serah_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141340E2ADF78950077E085 /* Serah_V1Tests.swift */; };
 		C14134192ADF78950077E085 /* Serah_V1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14134182ADF78950077E085 /* Serah_V1UITests.swift */; };
 		C141341B2ADF78950077E085 /* Serah_V1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141341A2ADF78950077E085 /* Serah_V1UITestsLaunchTests.swift */; };
+		C141342A2ADF7C6F0077E085 /* boxQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14134292ADF7C6F0077E085 /* boxQuestionView.swift */; };
+		C14373882AF49C04008F4086 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14373872AF49C04008F4086 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C101039F2AEA9F8A00D70471 /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
 		C14133FA2ADF78940077E085 /* Serah.V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Serah.V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14133FD2ADF78940077E085 /* Serah_V1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serah_V1App.swift; sourceTree = "<group>"; };
 		C14133FF2ADF78940077E085 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		C14134142ADF78950077E085 /* Serah.V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Serah.V1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14134182ADF78950077E085 /* Serah_V1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serah_V1UITests.swift; sourceTree = "<group>"; };
 		C141341A2ADF78950077E085 /* Serah_V1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serah_V1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C14134292ADF7C6F0077E085 /* boxQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxQuestionView.swift; sourceTree = "<group>"; };
+		C14373872AF49C04008F4086 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		C14133F12ADF78940077E085 = {
 			isa = PBXGroup;
 			children = (
+				C14373872AF49C04008F4086 /* SwiftUIView.swift */,
 				C14133FC2ADF78940077E085 /* Serah.V1 */,
 				C141340D2ADF78950077E085 /* Serah.V1Tests */,
 				C14134172ADF78950077E085 /* Serah.V1UITests */,
@@ -96,6 +103,8 @@
 			children = (
 				C14133FD2ADF78940077E085 /* Serah_V1App.swift */,
 				C14133FF2ADF78940077E085 /* ContentView.swift */,
+				C14134292ADF7C6F0077E085 /* boxQuestionView.swift */,
+				C101039F2AEA9F8A00D70471 /* questions.swift */,
 				C14134012ADF78950077E085 /* Assets.xcassets */,
 				C14134032ADF78950077E085 /* Preview Content */,
 			);
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C14134002ADF78940077E085 /* ContentView.swift in Sources */,
+				C10103A02AEA9F8A00D70471 /* questions.swift in Sources */,
 				C14133FE2ADF78940077E085 /* Serah_V1App.swift in Sources */,
+				C141342A2ADF7C6F0077E085 /* boxQuestionView.swift in Sources */,
+				C14373882AF49C04008F4086 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Serah.V1/Preview Content\"";
+				DEVELOPMENT_TEAM = M8ZG8KDA6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Serah.V1/Preview Content\"";
+				DEVELOPMENT_TEAM = M8ZG8KDA6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

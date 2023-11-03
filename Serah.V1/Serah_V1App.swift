@@ -15,3 +15,9 @@ struct Serah_V1App: App {
         }
     }
 }
+
+struct CustomColor {
+    static let boxColor = Color("QuestionBox")
+    static let smallBox = Color("smallBox")
+    // Add more here...
+}
