@@ -8,7 +8,7 @@
 import SwiftUI
 
 let triviaQuestions: [TriviaQuestion] = [
-    TriviaQuestion(question: "What is the capital of France?", choices: ["London", "Berlin", "Paris", "Madrid"], correctAnswerIndex: 2),
+    TriviaQuestion(question: "ما هو اسم أم الرسول صلى الله عليه وسلم؟", choices: ["آمنة بنت وهب", "خديجة بنت خويلد", "حليمة السعدية", "خولة بنت الأزور"], correctAnswerIndex: 2),
     
     
     

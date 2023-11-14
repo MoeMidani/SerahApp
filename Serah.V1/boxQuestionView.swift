@@ -9,24 +9,16 @@ import SwiftUI
 struct boxQuestionView: View {
     func fetchQuestion(_ difficulty : Int)->TriviaQuestion{
         
-        return TriviaQuestion(question: "What's the capital of France?", choices: ["London", "Paris", "Berlin", "Madrid"], correctAnswerIndex: 1)
+        return TriviaQuestion(question: "ما هو اسم أم الرسول صلى الله عليه وسلم؟", choices: ["آمنة بنت وهب", "خديجة بنت خويلد", "حليمة السعدية", "خولة بنت الأزور"], correctAnswerIndex: 2)
     }
     
     let timers = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var difficulty : Int
-//    var question : String = "hello"
     var isQuestionInProgress = true
     var totalTime : Float = 30.0
-    
     @State var timeRemaining: Float = 0
-    
-    var minutes: Int {
-        Int(timeRemaining) / 60
-    }
-    
-    var seconds: Int {
-        Int(timeRemaining) % 60
-    }
+    var minutes: Int {Int(timeRemaining) / 60}
+    var seconds: Int {Int(timeRemaining) % 60}
     
     var body: some View {
         
