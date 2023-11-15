@@ -9,9 +9,9 @@ import SwiftUI
 struct boxQuestionView: View {
     func fetchQuestion(_ difficulty : Int)->TriviaQuestion{
         
-        return TriviaQuestion(question: "ما هو اسم أم الرسول صلى الله عليه وسلم؟", choices: ["آمنة بنت وهب", "خديجة بنت خويلد", "حليمة السعدية", "خولة بنت الأزور"], correctAnswerIndex: 2)
+        return TriviaQuestion(question: "ما هو اسم أم الرسول صلى الله عليه وسلم؟", choices: ["آمنة بنت وهب", "خديجة بنت خويلد", "حليمة السعدية", "خولة بنت الأزور"], correctAnswerIndex: 0)
     }
-    
+  //  @State private var shouldUpdate = false
     let timers = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var difficulty : Int
     var isQuestionInProgress = true
@@ -19,6 +19,9 @@ struct boxQuestionView: View {
     @State var timeRemaining: Float = 0
     var minutes: Int {Int(timeRemaining) / 60}
     var seconds: Int {Int(timeRemaining) % 60}
+    
+    @State private var selectedAnswerIndex: Int?
+    @State private var currentQuestion: TriviaQuestion?
     
     var body: some View {
         
@@ -44,7 +47,7 @@ struct boxQuestionView: View {
     var timerView: some View {
 
         VStack{
-            var currentQuestion = fetchQuestion(difficulty)
+           let currentQuestion = fetchQuestion(difficulty)
 
             Image("logo")
                 .padding(.bottom, 30)
@@ -97,23 +100,29 @@ struct boxQuestionView: View {
                 Spacer()
                 ZStack{
                     Rectangle()
-                        .fill(CustomColor.smallBox)
+                        .fill(getBoxColor(for: 0))
                         .frame(width: 155, height: 110)
                         .cornerRadius(20)
+                        .onTapGesture { handleAnswerTapped(answerIndex: 0) }
                     Text(currentQuestion.choices[0]).font(.headline.italic())
                         .fontWeight(.regular)
                         .multilineTextAlignment(.center)
+                  
                 }
+                
                 Spacer()
+                
                 ZStack{
                     Rectangle()
-                        .fill(CustomColor.smallBox)
+                        .fill(getBoxColor(for: 1))
                         .frame(width: 155, height: 110)
                         .cornerRadius(20)
+                        .onTapGesture { handleAnswerTapped(answerIndex: 1) }
                     Text(currentQuestion.choices[1]).font(.headline.italic())
                         .fontWeight(.regular)
                         .multilineTextAlignment(.center)
                 }
+                
                 Spacer()
                 
             }
@@ -122,23 +131,29 @@ struct boxQuestionView: View {
                 Spacer()
                 ZStack{
                     Rectangle()
-                        .fill(CustomColor.smallBox)
+                        .fill(getBoxColor(for: 2))
                         .frame(width: 155, height: 110)
                         .cornerRadius(20)
+                        .onTapGesture { handleAnswerTapped(answerIndex: 2) }
                     Text(currentQuestion.choices[2]).font(.headline.italic())
                         .fontWeight(.regular)
                         .multilineTextAlignment(.center)
+                        
+
                 }
                 Spacer()
                 
                 ZStack{
                     Rectangle()
-                        .fill(CustomColor.smallBox)
+                        .fill(getBoxColor(for: 3))
                         .frame(width: 155, height: 110)
                         .cornerRadius(20)
+                        .onTapGesture { handleAnswerTapped(answerIndex: 3) }
                     Text(currentQuestion.choices[3]).font(.headline.italic())
                         .fontWeight(.regular)
                         .multilineTextAlignment(.center)
+                      
+
                 }
                 Spacer()
                 
@@ -149,7 +164,29 @@ struct boxQuestionView: View {
             Spacer()
         }
     }
-}
+    func handleAnswerTapped(answerIndex: Int) {
+        if answerIndex == currentQuestion?.correctAnswerIndex {
+               selectedAnswerIndex = answerIndex
+            
+           } else {
+           }
+       }
+    
+    func getBoxColor(for index: Int) -> Color {
+        if selectedAnswerIndex == index {
+            return currentQuestion?.correctAnswerIndex == index ? Color.green : Color.red
+        } else {
+            return CustomColor.smallBox
+        }
+        // Trigger a re-render by changing a @State variable
+//        withAnimation {
+//            // You can use any @State variable here, or introduce a new one for this purpose
+//            // For example, you can use a boolean variable like `shouldUpdate` and toggle it
+//            shouldUpdate.toggle()
+//        }
+    }
+   }
+
 
 
 #Preview {
